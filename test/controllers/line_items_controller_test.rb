@@ -52,4 +52,26 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to line_items_url
   end
+
+  test "add unique products to cart" do
+    assert_difference("LineItem.count", 1) do
+      post line_items_url, params: {
+        cart_id: @line_item.cart_id,
+        product_id: products(:ruby).id
+      }
+    end
+  end
+
+  test "add duplicate products to cart" do
+    post line_items_url, params: {
+      cart_id: @line_item.cart_id,
+      product_id: @line_item.product_id
+    }
+    assert_difference("LineItem.count", 0) do
+      post line_items_url, params: {
+        cart_id: @line_item.cart_id,
+        product_id: @line_item.product_id
+      }
+    end
+  end
 end
