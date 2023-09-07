@@ -72,7 +72,9 @@ class OrdersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def order_params
-    params.require(:order).permit(:name, :address, :email, :pay_type)
+    params.require(:order).permit(:name, :address, :email, :pay_type,
+                                  :routing_number, :account_number,
+                                  :credit_card_number, :expiration_data, :po_number)
   end
 
   def ensure_cart_is_not_empty
