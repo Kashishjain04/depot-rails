@@ -55,21 +55,29 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          'cart',
+          partial: 'layouts/cart',
+          locals: { cart: nil }
+        )
+      end
       format.html { redirect_to store_index_url, notice: "Your cart is currently empty." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cart
-      @cart = Cart.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def cart_params
-      params.fetch(:cart, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cart
+    @cart = Cart.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def cart_params
+    params.fetch(:cart, {})
+  end
 
   def invalid_cart
     logger.error "Attempt to access invalid cart #{params[:id]}"
