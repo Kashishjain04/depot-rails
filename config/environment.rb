@@ -13,7 +13,7 @@ Rails.application.configure do
     name: 'Kashish Jain',
     authentication: "plain",
     user_name: "jainabhishek7204@gmail.com",
-    password: "aiZdbZZa",
+    password: "iyblivbyyemudrtb",
     enable_starttls_auto: true
   }
 end

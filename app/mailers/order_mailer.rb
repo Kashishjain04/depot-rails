@@ -19,4 +19,9 @@ class OrderMailer < ApplicationMailer
     @order = order
     mail to: order.email, subject: 'Pragmatic Store Order Shipped'
   end
+
+  def failed(order)
+    @order = order
+    mail to: order.email, subject: 'Payment failed'
+  end
 end
