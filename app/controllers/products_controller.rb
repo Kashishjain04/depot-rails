@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    locale = I18n.locale
+    # products = Product.find_by(locale: locale.upcase || "A;;")
+    # puts products.inspect
+    @products = Product.where(locale: [locale.upcase, 'All'])
   end
 
   # GET /products/1 or /products/1.json
@@ -70,6 +73,6 @@ class ProductsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def product_params
-    params.require(:product).permit(:title, :description, :image_url, :price)
+    params.require(:product).permit(:title, :description, :image_url, :price, :locale)
   end
 end
