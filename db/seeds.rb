@@ -22,8 +22,9 @@ Product.create!(title: 'Docker for Rails Developers',
       deploying your app in the cloud into a baby step.
       </p>},
                 image_url: 'ridocker.jpg',
-                price: 19.95)
-# . . .
+                price: 19.95,
+                locale: 'EN')
+
 Product.create!(title: 'Design and Build Great Web APIs',
                 description:
                   %{<p>
@@ -39,8 +40,8 @@ Product.create!(title: 'Design and Build Great Web APIs',
       right away.
       </p>},
                 image_url: 'maapis.jpg',
-                price: 24.95)
-# . . .
+                price: 24.95,
+                locale: 'All')
 
 Product.create!(title: 'Modern CSS with Tailwind',
                 description:
@@ -56,4 +57,8 @@ Product.create!(title: 'Modern CSS with Tailwind',
       your site.
       </p>},
                 image_url: 'tailwind.jpg',
-                price: 18.95)
+                price: 18.95,
+                locale: "ES")
+
+User.create! name: 'dave',
+             password: Rails.application.credentials.dave_password
