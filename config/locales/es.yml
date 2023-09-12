@@ -57,12 +57,12 @@ es:
         "Check": "Cheque"
         "Credit card": "Tarjeta de Crédito"
         "Purchase order": "Orden de Compra"
-      check:
-        routing_number: "# de Enrutamiento"
-        account_number: "# de Cuenta"
-      cc:
-        cc_number: "Número"
-        expiration_date: "Expiración"
-      po:
-        po_number: "Número"
+    check:
+      routing_number: "# de Enrutamiento"
+      account_number: "# de Cuenta"
+    cc:
+      cc_number: "Número"
+      expiration_date: "Expiración"
+    po:
+      po_number: "Número"
   thanks: "Gracias por su pedido"

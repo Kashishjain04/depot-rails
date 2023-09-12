@@ -38,12 +38,12 @@ en:
         "Check": "Check"
         "Credit card": "Credit Card"
         "Purchase order": "Purchase Order"
-      check:
-        routing_number: "Routing #"
-        account_number: "Account #"
-      cc:
-        cc_number: "CC #"
-        expiration_date: "Expiry"
-      po:
-        po_number: "PO #"
+    check:
+      routing_number: "Routing #"
+      account_number: "Account #"
+    cc:
+      cc_number: "CC #"
+      expiration_date: "Expiry"
+    po:
+      po_number: "PO #"
   thanks: "Thank you for your order"
