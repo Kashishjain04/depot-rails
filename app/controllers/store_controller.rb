@@ -4,10 +4,12 @@ class StoreController < ApplicationController
   before_action :set_cart
 
   def index
+    locale = I18n.locale
     if params[:set_locale]
+      session[:locale] = params[:set_locale]
       redirect_to store_index_url(locale: params[:set_locale])
     else
-      @products = Product.order(:title)
+      @products = Product.where(locale: [locale.upcase, 'All']).order(:title)
     end
   end
 end
