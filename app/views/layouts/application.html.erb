@@ -28,10 +28,10 @@
   <nav class="bg-green-900 p-6">
     <%= render partial: 'layouts/cart', locals: { cart: @cart } %>
     <ul class="text-gray-300 leading-8">
-      <li><a href="/"><%= t('.home') %></a></li>
-      <li><a href="/questions"><%= t('.questions') %></a></li>
-      <li><a href="/news"><%= t('.news') %></a></li>
-      <li><a href="/contact"><%= t('.contact') %></a></li>
+      <li><%= link_to_unless_current t('.home'), store_index_path %></li>
+      <li><%= link_to_unless_current t('.questions'), store_index_path %></li>
+      <li><%= link_to_unless_current t('.news'), store_index_path %></a></li>
+      <li><%= link_to_unless_current t('.contact'), store_index_path %></a></li>
     </ul>
 
     <% if session[:user_id] %>
